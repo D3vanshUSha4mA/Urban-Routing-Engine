@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logistics & Routing Simulator</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="vignette-overlay"></div>
+    
+    <div id="ui-panel">
+        <div class="panel-header">Logistics & Routing Simulator</div>
+        
+        <div class="section-title">Interaction Mode</div>
+        <div class="mode-selector">
+            <input type="radio" id="mode-start" name="mode" value="start" checked><label for="mode-start">Origin</label>
+            <input type="radio" id="mode-wp" name="mode" value="waypoint"><label for="mode-wp">Waypoint</label>
+            <input type="radio" id="mode-end" name="mode" value="end"><label for="mode-end">Dest.</label>
+            <input type="radio" id="mode-block" name="mode" value="block"><label for="mode-block" style="color: #f87171;">Block Road</label>
+        </div>
+
+        <div class="section-title">Primary Waypoints</div>
+        <div class="search-container">
+            <div class="input-row">
+                <div class="icon icon-origin"></div>
+                <input type="text" id="startInput" placeholder="Click map to set Origin" readonly>
+            </div>
+            <div class="input-row">
+                <div class="icon icon-dest"></div>
+                <input type="text" id="endInput" placeholder="Click map to set Destination" readonly>
+            </div>
+        </div>
+
+        <div class="section-title">Environment Variables</div>
+        <div class="env-container">
+            <select id="weatherSelect">
+                <option value="clear">☀️ Global Clear</option>
+                <option value="rain">🌧️ Global Rain</option>
+                <option value="snow">❄️ Global Snow</option>
+            </select>
+            <select id="trafficSelect">
+                <option value="light">🟢 Light Traffic</option>
+                <option value="heavy">🟠 Heavy Traffic</option>
+                <option value="gridlock">🔴 Gridlock</option>
+            </select>
+        </div>
+
+        <div class="controls-area">
+            <button class="execute-btn" id="runBtn" onclick="runSimulation()">Execute Sequence</button>
+            <button class="reset-btn" onclick="resetMap()">Clear Map</button>
+        </div>
+        
+        <div class="chaos-container">
+            <button class="chaos-btn" onclick="triggerChaos()">Simulate Disaster</button>
+        </div>
+        
+        <div id="stats" class="dashboard">
+            <div class="dash-row dash-header">
+                <span>Metric</span>
+                <span class="col-static">Dijkstra</span>
+                <span class="col-dynamic">A* DPRD</span>
+            </div>
+            <div class="dash-row">
+                <span>ETA</span>
+                <span class="col-static" id="time-static">--</span>
+                <span class="col-dynamic" id="time-dynamic">--</span>
+            </div>
+            <div class="dash-row">
+                <span>Distance</span>
+                <span class="col-static" id="dist-static">--</span>
+                <span class="col-dynamic" id="dist-dynamic">--</span>
+            </div>
+            <div class="dash-row">
+                <span>Nodes Searched</span>
+                <span class="col-static" id="nodes-static">--</span>
+                <span class="col-dynamic" id="nodes-dynamic">--</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

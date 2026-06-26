@@ -1,0 +1,10 @@
+# Ignore Python environment
+venv/
+__pycache__/
+
+# Ignore the heavy graph file
+nyc_grid.graphml
+
+# Ignore IDE specific files
+.vscode/
+.DS_Store
