@@ -40,7 +40,6 @@
 - [Chaos Monkey Resiliency Suite](#chaos-monkey-resiliency-suite)
 - [Performance Benchmarks](#performance-benchmarks)
 - [Project Structure](#project-structure)
-- [Screenshot](#screenshot)
 - [Getting Started](#getting-started)
 - [API Overview](#api-overview)
 - [Future Scope](#future-scope)
@@ -459,13 +458,7 @@ Urban-Routing-Engine/
 
 ---
 
-# Screenshot
 
-<p align="center">
-
-<img src="images/showcase.gif" width="950" alt="AdaptivePath Demo">
-
-</p>
 
 ---
 
