@@ -23,9 +23,9 @@
 
 <br>
 
-<img src="images/showcase.gif" width="950" alt="AdaptivePath Demo">
+<img src="images/showcase.png" width="950" alt="AdaptivePath Demo">
 
-*Replace with a GIF showing route generation, Chaos Monkey mode, and multi-stop routing.*
+
 
 </div>
 
@@ -469,7 +469,6 @@ Urban-Routing-Engine/
 
 ---
 
-# Getting Started
 # Getting Started
 
 ## Prerequisites
